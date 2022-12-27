@@ -6,7 +6,8 @@ const request = config => {
         uni.request({
             timeout: 10000,
             method: config.method || 'get',
-            url: baseUrl + config.url
+            url: baseUrl + config.url,
+            data: config.data
         }).then(response => {
             let [error, res] = response
             if(error) {

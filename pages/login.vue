@@ -61,7 +61,11 @@
 				}
 			},
 			pwdLogin() {
-				this.$store.dispatch('Login', this.loginForm)
+				this.$store.dispatch('Login', this.loginForm).then(() => {
+					this.$modal.closeLoading()
+				}).catch(() => {
+					this.getCode()
+				})
 			},
 			getCode() {
 				getCodeImg().then(res => {

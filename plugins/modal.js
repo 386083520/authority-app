@@ -10,5 +10,8 @@ export default {
             title: content,
             icon: 'none'
         })
+    },
+    closeLoading() {
+        uni.hideLoading()
     }
 }
