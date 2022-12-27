@@ -16,6 +16,7 @@
 			<view class="input-item flex align-center">
 				<view class="iconfont icon-code icon"></view>
 				<input placeholder="请输入验证码" class="input" maxlength="4" v-model="loginForm.code"/>
+				<image :src="codeUrl" class="login-code-img"></image>
 			</view>
 			<view class="action-btn">
 				<button class="login-btn bg-blue" @click="hangleLogin">登陆</button>
@@ -66,7 +67,6 @@
 				getCodeImg().then(res => {
 					this.loginForm.uuid = res.uuid
 					this.codeUrl = 'data:image/gif;base64,' + res.img
-					console.log('gsdcodeUrl', res)
 				})
 			}
 		}
@@ -110,6 +110,9 @@
 		.xieyi {
 			color: #333;
 			margin-top: 20px;
+		}
+		.login-code-img {
+			height: 45px;
 		}
 	}
 }
