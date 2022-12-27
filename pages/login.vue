@@ -30,9 +30,14 @@
 </template>
 
 <script>
+	import { getCodeImg } from '@/api/login'
 	export default {
+		created() {
+			this.getCode()
+		},
 		data() {
 			return {
+				codeUrl: '',
 				loginForm: {
 					username: '',
 					password: '',
@@ -56,6 +61,13 @@
 			},
 			pwdLogin() {
 
+			},
+			getCode() {
+				getCodeImg().then(res => {
+					this.loginForm.uuid = res.uuid
+					this.codeUrl = 'data:image/gif;base64,' + res.img
+					console.log('gsdcodeUrl', res)
+				})
 			}
 		}
 	}
