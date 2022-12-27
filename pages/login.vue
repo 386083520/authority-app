@@ -76,7 +76,6 @@
 			},
 			loginSuccess() {
 				this.$store.dispatch('GetInfo').then(res => {
-
 				})
 			}
 		}

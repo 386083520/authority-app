@@ -28,8 +28,13 @@ const user = {
         },
         GetInfo({commit}) {
             console.log('gsdsuccess')
-            getInfo().then(res => {
-                console.log('gsdgetInfo', res)
+            return new Promise((resolve, reject) => {
+                getInfo().then(res => {
+                    console.log('gsdgetInfo', res)
+                    resolve(res)
+                }).catch(error => {
+                    reject(error)
+                })
             })
         }
     }
