@@ -7,18 +7,18 @@
 		<view class="login-form-content">
 			<view class="input-item flex align-center">
 				<view class="iconfont icon-user icon"></view>
-				<input placeholder="请输入账号" class="input" maxlength="30"/>
+				<input placeholder="请输入账号" class="input" maxlength="30" v-model="loginForm.username"/>
 			</view>
 			<view class="input-item flex align-center">
 				<view class="iconfont icon-password icon"></view>
-				<input placeholder="请输入密码" class="input" type="password" maxlength="20"/>
+				<input placeholder="请输入密码" class="input" type="password" maxlength="20" v-model="loginForm.password"/>
 			</view>
 			<view class="input-item flex align-center">
 				<view class="iconfont icon-code icon"></view>
-				<input placeholder="请输入验证码" class="input" maxlength="4"/>
+				<input placeholder="请输入验证码" class="input" maxlength="4" v-model="loginForm.code"/>
 			</view>
 			<view class="action-btn">
-				<button class="login-btn bg-blue">登陆</button>
+				<button class="login-btn bg-blue" @click="hangleLogin">登陆</button>
 			</view>
 		</view>
 		<view class="text-center xieyi">
@@ -33,8 +33,30 @@
 	export default {
 		data() {
 			return {
-
+				loginForm: {
+					username: '',
+					password: '',
+					code: '',
+					uuid: ''
+				}
 			};
+		},
+		methods: {
+			hangleLogin() {
+				if(this.loginForm.username === '') {
+					this.$modal.msgError('请输入账号')
+				}else if(this.loginForm.password === '') {
+					this.$modal.msgError('请输入密码')
+				}else if(this.loginForm.code === '') {
+					this.$modal.msgError('请输入验证码')
+				}else {
+					this.$modal.loading('登陆中，请耐心等待')
+					this.pwdLogin()
+				}
+			},
+			pwdLogin() {
+
+			}
 		}
 	}
 </script>
