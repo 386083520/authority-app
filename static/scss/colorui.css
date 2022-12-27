@@ -9,3 +9,8 @@
 .justify-center {
     justify-content: center;
 }
+
+.bg-blue {
+    color: #ffffff;
+    background-color: #0081ff;
+}
