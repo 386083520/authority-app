@@ -1,4 +1,4 @@
-import { login } from '@/api/login'
+import { login, getInfo } from '@/api/login'
 import { setToken, getToken } from "@/utils/auth"
 
 const user = {
@@ -24,6 +24,12 @@ const user = {
                 }).catch(error => {
                     reject(error)
                 })
+            })
+        },
+        GetInfo({commit}) {
+            console.log('gsdsuccess')
+            getInfo().then(res => {
+                console.log('gsdgetInfo', res)
             })
         }
     }

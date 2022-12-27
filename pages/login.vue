@@ -63,6 +63,7 @@
 			pwdLogin() {
 				this.$store.dispatch('Login', this.loginForm).then(() => {
 					this.$modal.closeLoading()
+					this.loginSuccess()
 				}).catch(() => {
 					this.getCode()
 				})
@@ -71,6 +72,11 @@
 				getCodeImg().then(res => {
 					this.loginForm.uuid = res.uuid
 					this.codeUrl = 'data:image/gif;base64,' + res.img
+				})
+			},
+			loginSuccess() {
+				this.$store.dispatch('GetInfo').then(res => {
+
 				})
 			}
 		}

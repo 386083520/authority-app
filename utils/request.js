@@ -1,13 +1,21 @@
 import config from '@/config'
 import { toast } from '@/utils/common'
+import { getToken } from "./auth"
+
 const baseUrl = config.baseUrl
 const request = config => {
+    const isToken = (config.headers || {}).isToken === false
+    config.header = config.header || {}
+    if(getToken() && !isToken) {
+        config.header['Authorization'] = 'Bearer ' + getToken()
+    }
     return new Promise((resolve, reject) => {
         uni.request({
             timeout: 10000,
             method: config.method || 'get',
             url: baseUrl + config.url,
-            data: config.data
+            data: config.data,
+            header: config.header
         }).then(response => {
             let [error, res] = response
             if(error) {
