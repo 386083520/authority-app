@@ -1,3 +1,6 @@
+body {
+    font-size: 14px;
+}
 .flex {
     display: flex;
 }
@@ -13,4 +16,16 @@
 .bg-blue {
     color: #ffffff;
     background-color: #0081ff;
+}
+
+.text-blue {
+    color: #0081ff;
+}
+
+.text-grey {
+    color: #8799a3;
+}
+
+.text-center {
+    text-align: center;
 }

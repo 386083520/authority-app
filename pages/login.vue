@@ -21,7 +21,11 @@
 				<button class="login-btn bg-blue">登陆</button>
 			</view>
 		</view>
-		<view></view>
+		<view class="text-center xieyi">
+			<text class="text-grey">登录即代表同意</text>
+			<text class="text-blue">《用户协议》</text>
+			<text class="text-blue">《隐私协议》</text>
+		</view>
 	</view>
 </template>
 
@@ -68,6 +72,10 @@
 		.login-btn {
 			margin-top: 40px;
 			height: 45px;
+		}
+		.xieyi {
+			color: #333;
+			margin-top: 20px;
 		}
 	}
 }
