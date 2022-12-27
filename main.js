@@ -3,8 +3,10 @@ import App from './App'
 // #ifndef VUE3
 import Vue from 'vue'
 import plugins from './plugins'
+import store from "./store";
 Vue.use(plugins)
 Vue.config.productionTip = false
+Vue.prototype.$store = store
 App.mpType = 'app'
 const app = new Vue({
     ...App

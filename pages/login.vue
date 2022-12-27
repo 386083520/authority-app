@@ -61,7 +61,7 @@
 				}
 			},
 			pwdLogin() {
-
+				this.$store.dispatch('Login', this.loginForm)
 			},
 			getCode() {
 				getCodeImg().then(res => {
