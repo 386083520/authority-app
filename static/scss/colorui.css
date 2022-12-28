@@ -13,6 +13,10 @@ body {
     justify-content: center;
 }
 
+.justify-between {
+    justify-content: space-between;
+}
+
 .bg-blue {
     color: #ffffff;
     background-color: #0081ff;

@@ -1,13 +1,28 @@
 import { login, getInfo } from '@/api/login'
 import { setToken, getToken } from "@/utils/auth"
+import storage from "@/utils/storage"
+import config from '@/config'
+import constant from "@/utils/constant";
+
+const baseUrl = config.baseUrl
 
 const user = {
     state: {
-        token: getToken()
+        token: getToken(),
+        name: storage.get(constant.name),
+        avatar: storage.get(constant.avatar)
     },
     mutations: {
         SET_TOKEN: (state, token) => {
             state.token = token
+        },
+        SET_NAME: (state, name) => {
+            state.name = name
+            storage.set(constant.name, name)
+        },
+        SET_AVATAR: (state, avatar) => {
+            state.avatar = avatar
+            storage.set(constant.avatar, avatar)
         }
     },
     actions: {
@@ -30,6 +45,11 @@ const user = {
             console.log('gsdsuccess')
             return new Promise((resolve, reject) => {
                 getInfo().then(res => {
+                    const user = res.user
+                    const avatar = (user === null || user.avatar === '' || user.avatar === null) ? require('@/static/images/profile.jpg'): baseUrl + user.avatar
+                    const username = (user === null || user.userName === '' || user.userName === null) ? '': user.userName
+                    commit('SET_NAME', username)
+                    commit('SET_AVATAR', avatar)
                     console.log('gsdgetInfo', res)
                     resolve(res)
                 }).catch(error => {
