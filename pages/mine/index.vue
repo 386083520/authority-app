@@ -17,7 +17,24 @@
 			</view>
 		</view>
 		<view class="content-section">
-			<view class="mine-actions">aaaa</view>
+			<view class="mine-actions grid col-4 text-center">
+				<view class="action-item">
+					<view class="iconfont icon-friendfill text-pink icon"></view>
+					<text class="text">交流群</text>
+				</view>
+				<view class="action-item">
+					<view class="iconfont icon-service text-blue icon"></view>
+					<text class="text">在线客服</text>
+				</view>
+				<view class="action-item">
+					<view class="iconfont icon-community text-mauve icon"></view>
+					<text class="text">反馈社区</text>
+				</view>
+				<view class="action-item">
+					<view class="iconfont icon-dianzan text-green icon"></view>
+					<text class="text">点赞我们</text>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -60,6 +77,16 @@
 			margin: 15px 15px;
 			padding: 20px 0;
 			border-radius: 8px;
+			.action-item {
+				.icon {
+					font-size: 28px;
+				}
+				.text {
+					display: block;
+					font-size: 13px;
+					margin: 8px 0px;
+				}
+			}
 		}
 	}
 }

@@ -22,14 +22,6 @@ body {
     background-color: #0081ff;
 }
 
-.text-blue {
-    color: #0081ff;
-}
-
-.text-grey {
-    color: #8799a3;
-}
-
 .text-center {
     text-align: center;
 }
@@ -45,5 +37,33 @@ body {
 
 .padding{
     padding: 15px;
+}
+
+.text-green {
+    color: #39b54a;
+}
+
+.text-mauve {
+    color: #9c26b0;
+}
+
+.text-pink {
+    color: #e03997;
+}
+
+.text-blue {
+    color: #0081ff;
+}
+
+.text-grey {
+    color: #8799a3;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.grid.col-4>view {
+    width: 25%;
 }
 
