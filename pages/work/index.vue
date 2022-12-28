@@ -1,9 +1,9 @@
 <template>
 	<view>
 		<uni-swiper-dot :info="bannerData" :current="current">
-			<swiper @change="changeSwiper">
+			<swiper @change="changeSwiper" class="swiper-box">
 				<swiper-item v-for="(item,index) in bannerData" :key="index">
-					<view>
+					<view class="swiper-item">
 						<image :src="item.image"></image>
 					</view>
 				</swiper-item>
@@ -42,5 +42,15 @@
 </script>
 
 <style lang="scss">
-
+	.swiper-box {
+		height: 150px;
+		.swiper-item {
+			display: flex;
+			flex-direction: column;
+			height: 150px;
+		}
+		image {
+			width: 100%;
+		}
+	}
 </style>
