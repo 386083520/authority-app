@@ -1,14 +1,21 @@
 <script>
-	export default {
+    import { getToken } from "./utils/auth";
+
+    export default {
 		onLaunch: function() {
 			console.log('App Launch')
+            this.initApp()
 		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		}
+        methods: {
+		    initApp() {
+		        this.checkLogin()
+            },
+            checkLogin() {
+		        if(!getToken()) {
+		            this.$tab.reLaunch('pages/login')
+                }
+            }
+        }
 	}
 </script>
 
