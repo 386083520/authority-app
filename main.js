@@ -4,6 +4,7 @@ import App from './App'
 import Vue from 'vue'
 import plugins from './plugins'
 import store from "./store";
+import './permission'
 Vue.use(plugins)
 Vue.config.productionTip = false
 Vue.prototype.$store = store
