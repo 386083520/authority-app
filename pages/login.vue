@@ -76,6 +76,7 @@
 			},
 			loginSuccess() {
 				this.$store.dispatch('GetInfo').then(res => {
+					this.$tab.reLaunch('/pages/index/index')
 				})
 			}
 		}
