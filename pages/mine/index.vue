@@ -1,7 +1,7 @@
 <template>
 	<view class="mine-container">
 		<view class="header-section">
-			<view class="flex justify-between">
+			<view class="flex justify-between padding">
 				<view class="flex align-center">
 					<image :src="avatar" class="cu-avatar xl round"></image>
 					<view class="user-info">
@@ -15,6 +15,9 @@
 					<view class="iconfont icon-right"></view>
 				</view>
 			</view>
+		</view>
+		<view class="content-section">
+			<view class="mine-actions">aaaa</view>
 		</view>
 	</view>
 </template>
@@ -31,6 +34,9 @@
 </script>
 
 <style lang="scss">
+	page {
+		background-color: #f5f6f7;
+	}
 .mine-container {
 	.header-section {
 		background-color: #3c96f3;
@@ -44,6 +50,16 @@
 			.u_title {
 				font-size: 18px;
 			}
+		}
+	}
+	.content-section {
+		position: relative;
+		top: -50px;
+		.mine-actions {
+			background-color: white;
+			margin: 15px 15px;
+			padding: 20px 0;
+			border-radius: 8px;
 		}
 	}
 }
