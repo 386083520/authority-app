@@ -33,3 +33,13 @@ body {
 .text-center {
     text-align: center;
 }
+
+.cu-avatar.xl {
+    width: 64px;
+    height: 64px;
+}
+
+.round {
+    border-radius: 2500px;
+}
+
