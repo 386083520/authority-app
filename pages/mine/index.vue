@@ -35,6 +35,32 @@
 					<text class="text">点赞我们</text>
 				</view>
 			</view>
+			<view class="menu-list">
+				<view class="list-cell list-cell-arrow">
+					<view class="menu-item-box">
+						<view class="iconfont icon-user menu-icon"></view>
+						<view>编辑资料</view>
+					</view>
+				</view>
+				<view class="list-cell list-cell-arrow">
+					<view class="menu-item-box">
+						<view class="iconfont icon-help menu-icon"></view>
+						<view>常见问题</view>
+					</view>
+				</view>
+				<view class="list-cell list-cell-arrow">
+					<view class="menu-item-box">
+						<view class="iconfont icon-aixin menu-icon"></view>
+						<view>关于我们</view>
+					</view>
+				</view>
+				<view class="list-cell list-cell-arrow">
+					<view class="menu-item-box">
+						<view class="iconfont icon-setting menu-icon"></view>
+						<view>应用设置</view>
+					</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
