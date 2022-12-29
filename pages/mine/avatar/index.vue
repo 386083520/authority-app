@@ -12,7 +12,8 @@
 			</view>
 		</view>
 		<view class="cropper-config">
-
+			<button type="reverse" style="margin-top: 15px" @click="getImage">选择头像</button>
+			<button type="warn" style="margin-top: 15px">提交</button>
 		</view>
 	</view>
 </template>
@@ -31,6 +32,16 @@
 				cutB: 0,
 				cutR: 0
 			};
+		},
+		methods: {
+			getImage() {
+				var _this = this
+				uni.chooseImage({
+					success(res) {
+						_this.imageSrc = res.tempFilePaths[0]
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -41,7 +52,7 @@
 	min-height: 375px;
 }
 .cropper-config {
-
+	padding: 10px 20px;
 }
 .uni-cropper-content {
 	position: relative;
