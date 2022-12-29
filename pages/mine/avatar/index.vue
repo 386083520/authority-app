@@ -2,9 +2,9 @@
 	<view class="container">
 		<view class="cropper-content">
 			<view class="uni-cropper">
-				<view class="uni-cropper-content">
-					<image :src="imageSrc"></image>
-					<view class="uni-cropper-crop-box" style="left: 20px;right: 20px;top: 20px;bottom: 20px">
+				<view class="uni-cropper-content" :style="'width:' + cropperInitW + 'px;height:' + cropperInitH + 'px;'">
+					<image :src="imageSrc" :style="'width:' + cropperInitW + 'px;height:' + cropperInitH + 'px;'"></image>
+					<view class="uni-cropper-crop-box" :style="'left:'+cutL+'px;top:'+cutT+'px;right:'+cutR+'px;bottom:'+cutB+'px'">
 						<view class="uni-cropper-view-box">
 						</view>
 					</view>
@@ -18,10 +18,18 @@
 </template>
 
 <script>
+	let sysInfo = uni.getSystemInfoSync()
+	let SCREEN_WIDTH = sysInfo.screenWidth
 	export default {
 		data() {
 			return {
-				imageSrc: this.$store.getters.avatar
+				imageSrc: this.$store.getters.avatar,
+				cropperInitW: SCREEN_WIDTH,
+				cropperInitH: SCREEN_WIDTH,
+				cutL: 0,
+				cutT: 0,
+				cutB: 0,
+				cutR: 0
 			};
 		}
 	}
