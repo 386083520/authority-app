@@ -21,6 +21,7 @@
 <script>
 	let sysInfo = uni.getSystemInfoSync()
 	let SCREEN_WIDTH = sysInfo.screenWidth
+	let INIT_DRAG_POSITION = 100
 	export default {
 		data() {
 			return {
@@ -33,12 +34,28 @@
 				cutR: 0
 			};
 		},
+		onReady() {
+			this.loadImage()
+		},
 		methods: {
 			getImage() {
 				var _this = this
 				uni.chooseImage({
 					success(res) {
 						_this.imageSrc = res.tempFilePaths[0]
+						_this.loadImage()
+					}
+				})
+			},
+			loadImage() {
+				var _this = this
+				uni.getImageInfo({
+					src: _this.imageSrc,
+					success(res) {
+						_this.cutL = Math.ceil(INIT_DRAG_POSITION/2)
+						_this.cutR = _this.cutL
+						_this.cutT = Math.ceil(INIT_DRAG_POSITION/2)
+						_this.cutB = _this.cutT
 					}
 				})
 			}
