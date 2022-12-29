@@ -3,7 +3,7 @@
 		<view class="header-section">
 			<view class="flex justify-between padding">
 				<view class="flex align-center">
-					<image :src="avatar" class="cu-avatar xl round"></image>
+					<image :src="avatar" @click="handleToAvatar" class="cu-avatar xl round"></image>
 					<view class="user-info">
 						<view class="u_title">
 							用户名：{{ name }}
@@ -72,6 +72,11 @@
 				name: this.$store.state.user.name,
 				avatar: this.$store.state.user.avatar
 			};
+		},
+		methods: {
+			handleToAvatar() {
+				this.$tab.navigateTo('/pages/mine/avatar/index')
+			}
 		}
 	}
 </script>

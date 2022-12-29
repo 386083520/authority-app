@@ -3,5 +3,10 @@ export default {
         return uni.reLaunch({
             url: url
         })
+    },
+    navigateTo(url) {
+        return uni.navigateTo({
+            url: url
+        })
     }
 }
