@@ -6,6 +6,8 @@
 					<image :src="imageSrc" :style="'width:' + cropperInitW + 'px;height:' + cropperInitH + 'px;'"></image>
 					<view class="uni-cropper-crop-box" :style="'left:'+cutL+'px;top:'+cutT+'px;right:'+cutR+'px;bottom:'+cutB+'px'">
 						<view class="uni-cropper-view-box">
+							<view class="uni-cropper-dashed-h"></view>
+							<view class="uni-cropper-dashed-v"></view>
 						</view>
 					</view>
 				</view>
@@ -77,5 +79,28 @@
 	.uni-cropper-crop-box {
 		position: absolute;
 		background: rgba(255,255,255,0.3);
+		.uni-cropper-view-box {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			outline: 1px solid #69f;
+			outline-color: rgba(102, 153, 255, 0.75);
+			.uni-cropper-dashed-h {
+				position: absolute;
+				top: 33.3333333%;
+				width: 100%;
+				height: 33.3333333%;
+				border-top: 1px dashed rgba(255,255,255, 0.5);
+				border-bottom: 1px dashed rgba(255,255,255, 0.5);
+			}
+			.uni-cropper-dashed-v {
+				position: absolute;
+				left: 33.3333333%;
+				height: 100%;
+				width: 33.3333333%;
+				border-left: 1px dashed rgba(255,255,255, 0.5);
+				border-right: 1px dashed rgba(255,255,255, 0.5);
+			}
+		}
 	}
 </style>
